@@ -12,6 +12,8 @@ RSpec.describe User, type: :model do
     expect(user).to be_valid
   end
 
+  it { should have_valid(:first_name).when('John', 'Meghan')}
+
   it "is not valid without a first_name" do
     user = User.create(last_name: "Mendes", email: "example@gmail.com", password: "mypassword", password_confirmation: "mypassword")
     expect(user).to_not be_valid
@@ -30,6 +32,14 @@ RSpec.describe User, type: :model do
   it "is not valid without a password" do
     user = User.create(first_name: "John", last_name: "Mendes", email: "example@gmail.com")
     expect(user).to_not be_valid
+  end
+
+  it 'should have a matching password confirmation' do
+    user = User.new
+    user.password = 'password'
+    user.password_confirmation = 'anotherpassowrd'
+    expect(user).to_not be_valid
+    expect(user.errors[:password_confirmation]).to_not be_blank
   end
 end
 
