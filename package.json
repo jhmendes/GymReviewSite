@@ -1,5 +1,7 @@
 {
   "name": "gym_review_site",
   "private": true,
-  "dependencies": {}
+  "dependencies": {
+    "jquery-ujs": "^1.2.2"
+  }
 }

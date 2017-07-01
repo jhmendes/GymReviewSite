@@ -4,7 +4,7 @@ class DeviseCreateUsers < ActiveRecord::Migration[5.0]
 
       ## Basic information about the user
       t.string :first_name, null: false
-      t.string :last_name, null: false 
+      t.string :last_name, null: false
       ## Database authenticatable
       t.string :email,              null: false, default: ""
       t.string :encrypted_password, null: false, default: ""
@@ -36,6 +36,7 @@ class DeviseCreateUsers < ActiveRecord::Migration[5.0]
 
 
       t.timestamps null: false
+    
     end
 
     add_index :users, :email,                unique: true
