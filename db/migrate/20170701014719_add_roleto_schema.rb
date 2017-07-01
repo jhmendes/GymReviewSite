@@ -1,4 +1,4 @@
-class AddRoletoSchema < ActiveRecord::Migration[5.0]
+class AddRoletoSchema < ActiveRecord::Migration
   def change
     add_column :users, :role, :string, default: "user"
   end

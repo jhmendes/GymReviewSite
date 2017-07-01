@@ -1,4 +1,4 @@
-class DeviseCreateUsers < ActiveRecord::Migration[5.0]
+class DeviseCreateUsers < ActiveRecord::Migration
   def change
     create_table :users do |t|
 
@@ -36,7 +36,7 @@ class DeviseCreateUsers < ActiveRecord::Migration[5.0]
 
 
       t.timestamps null: false
-    
+
     end
 
     add_index :users, :email,                unique: true
