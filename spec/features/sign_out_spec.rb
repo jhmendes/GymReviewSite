@@ -16,7 +16,7 @@ feature "user signs out" do
     click_link 'Sign In'
     fill_in 'Email', with: user.email
     fill_in 'Password', with: user.password
-    fill_in 'Password Confirmation', with: user.password_confirmation
+    # fill_in 'Password Confirmation', with: user.password_confirmation
     click_button 'Sign In'
     click_link 'Sign Out'
 
