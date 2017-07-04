@@ -17,6 +17,11 @@ feature 'user signs in' do
     fill_in 'Email', with: user.email
     fill_in 'Password', with: user.password
     fill_in 'Password Confirmation', with: user.password_confirmation
+    click_button 'Sign In'
+
+    expect(page).to have_content("Welcome Back!")
+    expect(page).to have_content("Sign Out")
+    expect(page).to_not have_content("Sign In")
   end
 
   scenario 'existing email with wrong password is denied access'
