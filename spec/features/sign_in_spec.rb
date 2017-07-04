@@ -24,9 +24,45 @@ feature 'user signs in' do
     expect(page).to_not have_content("Sign In")
   end
 
-  scenario 'existing email with wrong password is denied access'
+  scenario 'existing email with wrong password is denied access' do
+    user = FactoryGirl.create(:user)
+    visit root_path
+    click_link "Sign In"
+    fill_in "Email", with: user.email
+    fill_in "Password", with: "wrongpassword"
+    fill_in "Password Confirmation", with: "wrongpassword"
+    click_button "Sign In"
 
-  scenario 'non-existant user tries to sign in with email and password that doesnt exist'
+    expect(page).to_not have_content("Sign Out")
 
-  scenario 'an already authenticated user cannot sign in'
+  end
+
+  scenario 'non-existant user tries to sign in with email and password that doesnt exist' do
+    visit root_path
+    click_link 'Sign In'
+    fill_in 'Email', with: "Nobody@gmail.com"
+    fill_in 'Password', with: "nopassword"
+    fill_in 'Password Confirmation', with: "nopassword"
+    click_button 'Sign In'
+
+    expect(page).to_not have_content("Welcome Back!")
+    expect(page).to_not have_content("Sign Out")
+    expect(page).to have_content("Invalid Email or password.")
+
+  end
+
+  scenario 'an already authenticated user cannot re-sign in' do
+    user = FactoryGirl.create(:user)
+    visit new_user_session_path
+    fill_in 'Email', with: user.email
+    fill_in 'Password', with: user.password
+    fill_in 'Password Confirmation', with: user.password_confirmation
+    click_button "Sign In"
+    expect(page).to have_content("Sign Out")
+    expect(page).to_not have_content("Sign In")
+
+    visit new_user_session_path
+    expect(page).to have_content("You are already signed in.")
+  
+  end
 end
