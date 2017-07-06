@@ -15,3 +15,25 @@
  *= require foundation_and_overrides
 
  */
+
+
+form {
+  margin: 30px;
+}
+
+h2 {
+  margin-bottom: 30px;
+
+}
+
+
+input {
+  margin-bottom: 40px;
+}
+
+
+#sign-up {
+  @media screen and (max-width: 39.9375em) {
+    text-align: center;
+  }
+}
