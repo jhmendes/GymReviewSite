@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users
  # routes for gyms and reviews add here
+  resources :gyms
   root "gyms#index"
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

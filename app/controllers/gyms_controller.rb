@@ -6,6 +6,11 @@ class GymsController < ApplicationController
 # this should be the same for reviews
 
   def index
-
+    @gyms = Gym.all
   end
+
+  def show
+    @gym = Gym.find(params[:id])
+  end
+
 end
