@@ -13,4 +13,5 @@
 
 
 <%= link_to "Update This Gym", edit_gym_path(@gym) %>
+<%= button_to "Delete This Gym", @gym, :method => :delete %>
 <%= link_to 'Back to Home', gyms_path %>

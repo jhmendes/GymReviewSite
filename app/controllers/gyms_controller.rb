@@ -1,9 +1,7 @@
 class GymsController < ApplicationController
 
-# before_action :authenticate_user!, except: [:index, :show]
-# unauthenticated users may only VIEW the gyms index and invidual show pages
-# they cannot create, edit, or delete gyms
-# this should be the same for reviews
+before_action :authenticate_user!, except: [:index, :show]
+
 
   def index
     @gyms = Gym.all
@@ -23,12 +21,21 @@ class GymsController < ApplicationController
     if @gym.save
       redirect_to @gym, notice: "Gym added successfully!"
     else
+      
       redirect_to new_gym_path
     end
   end
 
   def edit
     @gym = Gym.find(params[:id])
+  end
+
+  def destroy
+    @gym = Gym.find(params[:id])
+
+    @gym.delete
+    redirect_to gyms_path
+    flash[:notice] = "Gym successfully deleted!"
   end
 
   def update
@@ -40,8 +47,10 @@ class GymsController < ApplicationController
     else
       render :edit
     end
-    
+
   end
+
+
 
   private
 
