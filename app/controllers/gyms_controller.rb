@@ -13,4 +13,23 @@ class GymsController < ApplicationController
     @gym = Gym.find(params[:id])
   end
 
+  def new
+    @gym = Gym.new
+  end
+
+  def create
+    @gym = Gym.new(gym_params)
+
+    if @gym.save
+      redirect_to @gym, notice: "Gym added successfully!"
+    else
+      render action: 'new'
+    end
+  end
+
+  private
+
+  def gym_params
+    params.require(:gym).permit(:name, :location, :description, :price_range)
+  end
 end

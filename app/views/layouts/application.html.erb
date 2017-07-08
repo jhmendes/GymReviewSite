@@ -13,13 +13,14 @@
   </head>
 
   <body>
+    <div class="page">
       <nav class="top-bar">
         <ul class="menu align-right">
           <li class="menu-text">Gym Review Site</li>
           <% if user_signed_in? %>
             <li class="active"><%= link_to "Sign Out", destroy_user_session_path, method: :delete %></li>
             <li><%= link_to "Update Profile", edit_user_registration_path %></li>
-            <!-- <li><%= link_to "Add a New Gym", new_gym_path %></li> -->
+            <li><%= link_to "Add a New Gym", new_gym_path %></li>
           <% else %>
             <li><%= link_to "Sign Up", new_user_registration_path %></li>
             <li class="active"><%= link_to "Sign In", new_user_session_path %></li>
@@ -32,6 +33,6 @@
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
 
-
+  </div>
   </body>
 </html>
