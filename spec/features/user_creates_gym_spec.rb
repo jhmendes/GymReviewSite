@@ -50,7 +50,7 @@ feature "user creates a new gym to review" do
     click_button 'Submit'
 
     expect(page).to have_content("can't be blank")
-    expect(page).to have_current_path(new_gym_path)
+  
   end
 
 end

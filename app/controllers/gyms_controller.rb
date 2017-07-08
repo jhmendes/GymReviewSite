@@ -23,8 +23,24 @@ class GymsController < ApplicationController
     if @gym.save
       redirect_to @gym, notice: "Gym added successfully!"
     else
-      render action: 'new'
+      redirect_to new_gym_path
     end
+  end
+
+  def edit
+    @gym = Gym.find(params[:id])
+  end
+
+  def update
+    @gym = Gym.find(params[:id])
+    @gym.update_attributes(gym_params)
+
+    if @gym.save
+      redirect_to @gym, notice: "Gym successfully updated!"
+    else
+      render :edit
+    end
+    
   end
 
   private
