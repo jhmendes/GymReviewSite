@@ -11,7 +11,7 @@ feature "user views a list of gyms" do
 
   scenario "user views list of gyms" do
 
-    gym = Gym.create(name: "Big Sky Fitness", location: "Newington, CT", description: "20,000 square foot fitness center with free weights, cardio, classes, training, etc.")
+    gym = Gym.create(name: "Big Sky Fitness", location: "Newington, CT", description: "20,000 square foot fitness center with free weights, cardio, classes, training, etc.", price_range: "$$")
 
     visit root_path
 
