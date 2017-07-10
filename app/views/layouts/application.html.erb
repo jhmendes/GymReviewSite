@@ -13,11 +13,17 @@
   </head>
 
   <body>
+
     <div class="page">
+
       <nav class="top-bar">
+
         <ul class="menu align-right">
-          <li class="menu-text">Gym Review Site</li>
+          <li class="notice"><%= notice %></li>
+          <li class="alert"><%= alert %></li>
+          <li><%= link_to "Gym Review Site", gyms_path %> </li>
           <% if user_signed_in? %>
+
             <li class="active"><%= link_to "Sign Out", destroy_user_session_path, method: :delete %></li>
             <li><%= link_to "Update Profile", edit_user_registration_path %></li>
             <li><%= link_to "Add a New Gym", new_gym_path %></li>
@@ -30,8 +36,7 @@
     <%= yield %>
 
 
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
+
 
   </div>
   </body>

@@ -36,6 +36,18 @@ input {
   margin: auto;
 }
 
+.notice {
+  margin-left: 20px;
+  margin-top: 5px;
+  color: green;
+}
+
+.alert {
+  margin-left: 20px;
+  margin-top: 5px;
+  color: red;
+}
+
 #sign-up {
   @media screen and (max-width: 39.9375em) {
     text-align: center;

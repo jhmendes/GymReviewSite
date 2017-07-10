@@ -6,6 +6,8 @@ require "rails_helper"
 
 # I want to create a new gym to review
 # I must be signed in to do so
+# I must fill in Name, location, description, and price_range
+# if I do not supply enough information, I receive an error
 
 
 feature "user creates a new gym to review" do

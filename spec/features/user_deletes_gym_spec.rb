@@ -1,3 +1,4 @@
+
 require 'rails_helper'
 
 # As an authenticated user
