@@ -2,5 +2,6 @@ class Gym < ApplicationRecord
   validates :name, presence: true
   validates :location, presence: true
   validates :description, presence: true
-  # unique name!
+
+  has_many :reviews
 end
