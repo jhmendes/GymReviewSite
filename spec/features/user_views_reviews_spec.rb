@@ -6,7 +6,8 @@ require "rails_helper"
 
 
 # I should be able to click on any gym and be taken to its show page
-# Once there I should see a list of reviews for the particular gym
+# Once there I should see a link for reviews to the gym
+# Clicking the link brings me to a page for all reviews related to the gym
 
 
 feature "user views reviews for a gym" do
