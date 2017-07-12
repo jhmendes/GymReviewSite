@@ -12,8 +12,8 @@ require "rails_helper"
 # I should be re-directed to the page with all of the reviews for the gym
 
 feature 'user adds a review for a gym' do
-  user = FactoryGirl.create(:user)
-  gym = FactoryGirl.create(:gym)
+  let!(:user) { FactoryGirl.create(:user) }
+  let!(:gym) { FactoryGirl.create(:gym) }
   review = "This gym is great! I really enjoy working out here, its friendly and they have everything you need."
 
   scenario "user successfully adds a review" do
@@ -22,7 +22,8 @@ feature 'user adds a review for a gym' do
     click_link "Sign In"
     fill_in 'Email', with: user.email
     fill_in 'Password', with: user.password
-    click_button 'Sign In'
+    click_button "Sign In"
+
 
     click_link gym.name
     click_link 'Review this gym'
@@ -55,9 +56,8 @@ feature 'user adds a review for a gym' do
   end
 
   scenario "unauthenticated user tries to submit a review" do
-    visit gym_reviews_path(gym)
-    click_button 'Submit Review'
+    visit new_gym_review_path(gym)
 
-    expect(page).to have_content("Sign In")
+    expect(page).to have_content("You need to sign in or sign up before continuing")
   end
 end
