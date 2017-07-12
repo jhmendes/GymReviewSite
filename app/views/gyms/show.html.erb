@@ -11,9 +11,19 @@
 <h2>Price Range</h2>
 <p><%= @gym.price_range %></p>
 
-<%= link_to 'Reviews for this gym', gym_reviews_path(@gym) %>
-<%= link_to "Update This Gym", edit_gym_path(@gym) %>
-<%= button_to "Delete This Gym", @gym, :method => :delete %>
-<%= link_to 'Back to Home', gyms_path %>
+
+
+<% if user_signed_in? %>
+  <%= link_to 'Reviews for this gym', gym_reviews_path(@gym) %>
+  <%= link_to 'Review this gym', new_gym_review_path(@gym) %>
+  <%= link_to "Update This Gym", edit_gym_path(@gym) %>
+  <%= button_to "Delete This Gym", @gym, :method => :delete %>
+  <%= link_to 'Back to Home', gyms_path %>
+<% else %>
+  <%= link_to 'Reviews for this gym', gym_reviews_path(@gym) %>
+  <%= link_to 'Back to Home', gyms_path %>
+<% end %>
+
+
 
 <!-- add in name to reviews each loop afterwards -->
