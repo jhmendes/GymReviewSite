@@ -26,7 +26,7 @@ feature 'user deletes review' do
     fill_in 'Review', with: review
     click_button 'Submit Review'
 
-    click_button 'Delete Review'
+    click_button 'Delete This Review'
 
     expect(page).to_not have_content(review)
   end

@@ -20,6 +20,7 @@ feature 'user updates a review' do
 
   scenario 'user successfully updates their review' do
     visit root_path
+
     click_link "Sign In"
     fill_in 'Email', with: user.email
     fill_in 'Password', with: user.password

@@ -4,7 +4,8 @@ Rails.application.routes.draw do
   resources :gyms do
     resources :reviews
   end
-  # 
+
+
   # resources :reviews do
   #   resources :users
   # end

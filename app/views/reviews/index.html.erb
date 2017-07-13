@@ -1,10 +1,16 @@
 <h1>Reviews for <%= @gym.name %>:</h1>
 
 <% @reviews.each do |review| %>
-  <% if review.user == current_user %>
-    <%= link_to 'Edit Review', edit_gym_review_path(@user, review) %>
-  <% end %>
+
   <ul>
-    <li><%= review.content %></li>
+    <li>"<%= review.content %>" --- <%= review.user.first_name %> <%= review.user.last_name[0] %>.
+      <% if review.user == current_user %>
+        <%= link_to 'Edit Review', edit_gym_review_path(@user, review) %>
+        <%= button_to "Delete This Review", gym_review_path(@gym, review), method: :delete %>
+      <% end %>
+    </li>
   </ul>
 <% end %>
+
+
+<%= link_to 'Back to Home', gyms_path %>

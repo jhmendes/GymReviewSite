@@ -9,5 +9,5 @@ class User < ApplicationRecord
   validates :last_name, presence: true
   validates :email, presence: true
   has_many :reviews
-  
+  has_many :gyms
 end

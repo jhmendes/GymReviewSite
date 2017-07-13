@@ -50,6 +50,12 @@ class ReviewsController < ApplicationController
     end
   end
 
+  def destroy
+    @review = Review.find(params[:id])
+    @review.delete
+    redirect_to gym_reviews_path
+  end
+
 
   def review_params
     params.require(:review).permit(:content)
