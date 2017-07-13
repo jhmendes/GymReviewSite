@@ -58,6 +58,6 @@ class ReviewsController < ApplicationController
 
 
   def review_params
-    params.require(:review).permit(:content)
+    params.require(:review).permit(:content, :gym_id, :user_id)
   end
 end
