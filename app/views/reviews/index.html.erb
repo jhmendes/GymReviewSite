@@ -3,6 +3,7 @@
 <% @reviews.each do |review| %>
   <% if review.user == current_user %>
     <%= link_to 'Edit Review', edit_gym_review_path(@user, review) %>
+    <%= button_to "Delete This Review", gym_review_path(@gym, review), method: :delete %>
   <% end %>
   <ul>
     <li><%= review.content %></li>

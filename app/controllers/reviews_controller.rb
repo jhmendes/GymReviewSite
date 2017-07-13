@@ -14,6 +14,7 @@ class ReviewsController < ApplicationController
   end
 
   def edit
+    binding.pry
     @gym = Gym.find(params[:gym_id])
     @review = Review.find(params[:id])
   end
@@ -48,6 +49,12 @@ class ReviewsController < ApplicationController
       flash[:alert] = "Failed to save review."
       render :new
     end
+  end
+
+  def destroy
+    @review = Review.find(params[:id])
+    @review.delete
+    redirect_to gym_reviews_path
   end
 
 
