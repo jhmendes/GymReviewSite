@@ -5,12 +5,34 @@ class ReviewsController < ApplicationController
   def index
     @gym = Gym.find(params[:gym_id])
     @reviews = @gym.reviews
+    @user = current_user
   end
 
   def new
     @gym = Gym.find(params[:gym_id])
     @review = Review.new
   end
+
+  def edit
+    @gym = Gym.find(params[:gym_id])
+    @review = Review.find(params[:id])
+  end
+
+  def update
+    @gym = Gym.find(params[:id])
+    @review = Review.find(params[:id])
+    @review.update_attributes(review_params)
+
+    if @review.save
+      redirect_to gym_reviews_path
+      flash[:notice] = "Your review was updated successfully"
+    else
+      flash[:notice] = "Failed to update review"
+      render :edit
+    end
+  end
+
+
 
   def create
     @gym = Gym.find(params[:gym_id])

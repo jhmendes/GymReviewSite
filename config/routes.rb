@@ -4,6 +4,10 @@ Rails.application.routes.draw do
   resources :gyms do
     resources :reviews
   end
+  # 
+  # resources :reviews do
+  #   resources :users
+  # end
 
   root "gyms#index"
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html

@@ -1,6 +1,9 @@
 <h1>Reviews for <%= @gym.name %>:</h1>
 
 <% @reviews.each do |review| %>
+  <% if review.user == current_user %>
+    <%= link_to 'Edit Review', edit_gym_review_path(@user, review) %>
+  <% end %>
   <ul>
     <li><%= review.content %></li>
   </ul>
