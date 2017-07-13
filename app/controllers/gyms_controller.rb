@@ -21,8 +21,8 @@ before_action :authenticate_user!, except: [:index, :show]
     if @gym.save
       redirect_to @gym, notice: "Gym added successfully!"
     else
-      
-      redirect_to new_gym_path
+      flash[:notice] = "Failed to save gym."
+      render :new
     end
   end
 

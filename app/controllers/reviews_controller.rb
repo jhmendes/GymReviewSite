@@ -14,7 +14,6 @@ class ReviewsController < ApplicationController
   end
 
   def edit
-    binding.pry
     @gym = Gym.find(params[:gym_id])
     @review = Review.find(params[:id])
   end
