@@ -5,6 +5,12 @@ before_action :authenticate_user!, except: [:index, :show]
 
   def index
     @gyms = Gym.all
+
+    if params[:search]
+      @gyms = Gym.search(params[:search]).order("name DESC")
+      else
+      @gyms= Gym.all.order('name DESC')
+    end
   end
 
   def show
