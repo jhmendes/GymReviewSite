@@ -13,27 +13,6 @@ class ReviewsController < ApplicationController
     @review = Review.new
   end
 
-  def edit
-    @gym = Gym.find(params[:gym_id])
-    @review = Review.find(params[:id])
-  end
-
-  def update
-    @gym = Gym.find(params[:id])
-    @review = Review.find(params[:id])
-    @review.update_attributes(review_params)
-
-    if @review.save
-      redirect_to gym_reviews_path
-      flash[:notice] = "Your review was updated successfully"
-    else
-      flash[:notice] = "Failed to update review"
-      render :edit
-    end
-  end
-
-
-
   def create
     @gym = Gym.find(params[:gym_id])
     @review = Review.new(review_params)
@@ -50,6 +29,27 @@ class ReviewsController < ApplicationController
     end
   end
 
+  def edit
+    @gym = Gym.find(params[:gym_id])
+    @review = Review.find(params[:id])
+  end
+
+  def update
+    @gym = Gym.find(params[:gym_id])
+    @review = Review.find(params[:id])
+    @review.update_attributes(review_params)
+
+    if @review.save
+      redirect_to gym_reviews_path
+      flash[:notice] = "Your review was updated successfully"
+    else
+      flash[:notice] = "Failed to update review"
+      render :edit
+    end
+  end
+
+
+
   def destroy
     @review = Review.find(params[:id])
     @review.delete
@@ -58,6 +58,6 @@ class ReviewsController < ApplicationController
 
 
   def review_params
-    params.require(:review).permit(:content)
+    params.require(:review).permit(:content, :gym_id, :user_id)
   end
 end
