@@ -10,4 +10,10 @@ class User < ApplicationRecord
   validates :email, presence: true
   has_many :reviews
   has_many :gyms
+
+
+
+  def admin?
+    role == "admin"
+  end
 end
