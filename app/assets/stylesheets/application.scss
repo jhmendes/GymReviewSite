@@ -15,7 +15,18 @@
  *= require foundation_and_overrides
 
  */
+@import '_settings.scss';
 
+
+
+body {
+  background: url(http://strengthandhonorfitness.com/wp-content/uploads/2011/03/kettlebells-rope.jpg) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+
+}
 
 form {
   margin: 30px;
@@ -23,12 +34,16 @@ form {
 
 h2 {
   margin-bottom: 30px;
-
 }
 
 
 input {
   margin-bottom: 40px;
+}
+
+label {
+  color: #fff;
+  font-size: 20px;
 }
 
 .page {
@@ -49,7 +64,34 @@ input {
 }
 
 #sign-up {
+  text-align: center;
   @media screen and (max-width: 39.9375em) {
-    text-align: center;
+    font-size: 20px;
+  }
+}
+
+#new_gym {
+  width: 90%;
+  font-size: 20px;
+  background-color: $form-background-color;
+  label {
+    font-size: 20px;
+    text-decoration: none;
+
+  }
+  abbr {
+    display: none;
+  }
+}
+
+#new_user {
+  margin: 0 auto;
+  margin-top: 50px;
+  width: 60%;
+  background-color: $form-background-color;
+  border-radius: 20px;
+  padding: 20px;
+  input {
+    width: 100%;
   }
 }
