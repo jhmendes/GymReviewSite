@@ -5,7 +5,7 @@ before_action :authenticate_user!, except: [:index, :show]
 
   def index
     @gyms = Gym.all
-    @user = current_user
+    # @user = current_user
 
     if params[:search]
       @gyms = Gym.search(params[:search]).order("name DESC")
@@ -16,7 +16,7 @@ before_action :authenticate_user!, except: [:index, :show]
 
   def show
     @gym = Gym.find(params[:id])
-    @user = current_user
+    # @user = current_user
   end
 
   def new
@@ -26,7 +26,7 @@ before_action :authenticate_user!, except: [:index, :show]
 
   def create
     @gym = Gym.new(gym_params)
-     @user = current_user
+    #  @user = current_user
     if @gym.save
       redirect_to @gym, notice: "Gym added successfully!"
     else
@@ -37,7 +37,7 @@ before_action :authenticate_user!, except: [:index, :show]
 
   def edit
     @gym = Gym.find(params[:id])
-    @user = current_user
+    # @user = current_user
   end
 
   def destroy
