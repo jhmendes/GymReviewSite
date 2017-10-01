@@ -11,35 +11,3 @@ require "rails_helper"
 # I should only be able to do this once per review
 
 # PICK BACK UP HERE FLESH OUT THE TEST FIRST BEFORE IMPLEMENTING ANYTHING!
-
-
-
-# feature 'user votes on a review ' do
-#   let!(:user) { FactoryGirl.create(:user) }
-#   let!(:gym) { FactoryGirl.create(:gym) }
-#
-#   scenario 'user successfully upvotes a review' do
-#
-#     review = Review.create(user_id: user.id, gym_id: gym.id, content: "This gym is great!")
-#     visit root_path
-#     click_link "Sign In"
-#     fill_in 'Email', with: user.email
-#     fill_in 'Password', with: user.password
-#     click_button "Sign In"
-#
-#
-#     click_link gym.name
-#
-#     click_link 'Reviews for this gym'
-#
-#     # fill_in 'Review', with: review
-#     # click_button 'Submit Review'
-#
-#     click_button "Vote Up"
-#
-#     expect(page).to have_content('Positive Ratings: 1')
-#
-#
-#   end
-#   # scenario 'user successfully downvotes a review'
-# end

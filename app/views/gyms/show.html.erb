@@ -1,32 +1,31 @@
-<h1>Gym Details:</h1>
+<h2>Gym Details:</h2>
 
 <div class="gym_info">
-  <h2>Name:</h2>
+  <h3>Name:</h3>
   <p><%= @gym.name %></p>
-  <h2>Location:</h2>
+  <h3>Location:</h3>
   <p><%= @gym.location %></p>
 
-  <h2>Description:</h2>
+  <h3>Description:</h3>
   <p><%= @gym.description %> </p>
 
-  <h2>Price Range</h2>
+  <h3>Price Range</h3>
   <p><%= @gym.price_range %></p>
 
-  <h2>Reviews</h2>
-  <p><%= link_to 'Reviews for this gym', gym_reviews_path(@gym) %></p>
+  <h3>Reviews</h3>
+  <p><%= link_to 'Click here to see all reviews for this gym', gym_reviews_path(@gym) %></p>
 
 </div>
 
 
 
 <% if user_signed_in? %>
-  <ul>
-    <li><%= link_to 'Review this gym', new_gym_review_path(@gym) %></li>
-    <li><%= link_to "Update This Gym", edit_gym_path(@gym) %></li>
-  </ul>
-  <%= button_to "Delete This Gym", @gym, :method => :delete %>
+
+    <%= link_to 'Review this gym', new_gym_review_path(@gym), :class => "button success" %>
+    <%= link_to "Update This Gym", edit_gym_path(@gym), :class => "button success" %>
+
+  <%= button_to "Delete This Gym", @gym, :method => :delete, :class => "button alert" %>
 <% end %>
 
 
-<%= link_to 'Back to Home', gyms_path %>
 <!-- add in name to reviews each loop afterwards -->

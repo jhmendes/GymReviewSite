@@ -1,5 +1,6 @@
-<h1>Gyms Home Page</h1>
-<h2>View all gyms below:</h2>
+<div class="index">
+<h1>Welcome to Gym Review Site!</h1>
+<h3>View all gyms below:</h3>
 <!-- List of gyms in a div? Style into squares with image? -->
 
 <ul>
@@ -7,9 +8,4 @@
     <li><%= link_to "#{gym.name}", gym_path(gym) %></li>
   <% end %>
 </ul>
-
-
-<%= form_tag(gyms_path, :method => "get", id: "search-form") do %>
-  <%= text_field_tag :search, params[:search], placeholder: "Search Gyms" %>
-  <%= submit_tag "Search", :name => nil %>
-<% end %>
+<div>

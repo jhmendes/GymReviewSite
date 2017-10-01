@@ -19,11 +19,7 @@
 
 
 body {
-  background-color: lightgrey;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
+  background-color: darkgrey;
 
 }
 
@@ -31,24 +27,28 @@ form {
   margin: 30px;
 }
 
-
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Viga', sans-serif;
+}
 
 h2 {
   margin-bottom: 30px;
 }
 
-
+a {
+  color: #fff;
+}
 input {
   margin-bottom: 40px;
 }
 
 label {
-  color: #fff;
+  color: #000;
   font-size: 20px;
 }
 
 .page {
-  width: 90%;
+  width: 80%;
   margin: auto;
 }
 
@@ -64,19 +64,52 @@ label {
   color: red;
 }
 
+.menu .button {
+  display: inline-block;
+  color: #fff;
+  margin: 5px;
+  font-size: 1em;
+  border-radius: 10%;
+}
+
+
+.menu.vertical li {
+  text-align: center;
+  margin: 20px
+}
+
+.button a {
+  color: #fff;
+}
+
+
+.index {
+  margin: 20px;
+
+}
+
+
 #sign-up {
   text-align: center;
-  @media screen and (max-width: 39.9375em) {
-    font-size: 20px;
+
+  @media screen and (min-width: 39.9375em) {
+    h2 {
+      font-size: 50px;
+    }
+
+    h4 {
+      font-size: 20px;
+    }
   }
+
 }
 
 #new_gym {
   width: 90%;
   font-size: 20px;
-  background-color: $form-background-color;
+  // background-color: $form-background-color;
   label {
-    font-size: 20px;
+    font-size: 30px;
     text-decoration: none;
 
   }
@@ -88,11 +121,43 @@ label {
 #new_user {
   margin: 0 auto;
   margin-top: 50px;
-  width: 60%;
+  width: 100%;
   background-color: $form-background-color;
   border-radius: 20px;
-  padding: 20px;
-  input {
-    width: 100%;
+  padding: 50px;
+
+  @media screen and (min-width: 1100px) {
+    width: 60%;
   }
 }
+
+#search-form {
+  width: 50%;
+  display: inline;
+
+}
+
+
+
+
+/************* NAVIGATION *************/
+
+
+/************* END SECTION *************/
+
+
+/************* HOME PAGE *************/
+
+
+/************* END SECTION *************/
+
+/************* SIGN UP *************/
+
+
+/************* END SECTION *************/
+
+
+/************* SIGN IN *************/
+
+
+/************* END SECTION *************/
