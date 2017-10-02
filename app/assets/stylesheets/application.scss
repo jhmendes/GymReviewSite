@@ -38,6 +38,15 @@ h2 {
 a {
   color: #fff;
 }
+blockquote, cite {
+  color: #fff;
+  font-size: 1.5em;
+}
+
+p {
+  color: #fff;
+}
+
 input {
   margin-bottom: 40px;
 }
@@ -47,9 +56,15 @@ label {
   font-size: 20px;
 }
 
+img {
+  width: 70px;
+  margin: 0 auto;
+}
+
 .page {
   width: 80%;
   margin: auto;
+  margin-bottom: 50px;
 }
 
 .notice {
@@ -58,7 +73,7 @@ label {
   color: green;
 }
 
-.alert {
+.menu .alert {
   margin-left: 20px;
   margin-top: 5px;
   color: red;
@@ -83,12 +98,39 @@ label {
 }
 
 
-.index {
-  margin: 20px;
+.title {
+width: 100%;
+margin: 0 auto;
+padding: 50px;
+text-align: center;
+}
 
+.list {
+  border: 1px solid #000;
+  width: 80%;
+  margin: 0 auto;
+  padding: 5px;
+  font-family: Verdana, sans-serif;
+  padding: 20px;
+}
+
+.gym-details {
+  width: 50%;
+  margin: 0 auto;
+  text-align: center;
+  margin-top: 50px;
+
+  a {
+    margin: 15px;
+  }
 }
 
 
+.update-gym {
+  abbr, abbr[title] {
+    display: none;
+  }
+}
 #sign-up {
   text-align: center;
 

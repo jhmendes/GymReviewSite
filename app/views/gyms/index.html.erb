@@ -1,11 +1,15 @@
-<div class="index">
-<h1>Welcome to Gym Review Site!</h1>
-<h3>View all gyms below:</h3>
+<div class="title">
+  <h1>Welcome to Gym Review Site!</h1>
+  <p>A place to rate, review, and view your favorite local gyms, fitness centers, and personal training studios.</p>
+</div>
+
 <!-- List of gyms in a div? Style into squares with image? -->
 
-<ul>
-  <% @gyms.each do |gym| %>
+<div class="list">
+  <h3>Gym List</h3>
+  <ul>
+    <% @gyms.each do |gym| %>
     <li><%= link_to "#{gym.name}", gym_path(gym) %></li>
-  <% end %>
-</ul>
-<div>
+    <% end %>
+  </ul>
+</div>

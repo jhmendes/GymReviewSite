@@ -1,7 +1,11 @@
+<h1>Update Gym Information:</h1>
+
+<div class="update-gym">
 <%= simple_form_for @gym do |f| %>
   <%= f.input :name, label: 'Name' %>
   <%= f.input :location, label: 'Location' %>
   <%= f.input :description, label: 'Description' %>
   <%= f.input :price_range, label: 'Price Range', collection: ["$", "$$", "$$$"], as: :select %>
-  <%= f.button :submit, 'Update'%>
+  <%= f.button :submit, 'Update', :class => "button success"%>
 <% end %>
+</div>

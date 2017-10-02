@@ -1,21 +1,26 @@
+<div class="title">
 <h1>Reviews for <%= @gym.name %>:</h1>
-
+<br>
+</div>
 <% @reviews.each do |review| %>
 
-  <ul>
-    <li>"<%= review.content %>" --- <%= review.user.first_name %> <%= review.user.last_name[0] %>.
+
+
+    <blockquote>"<%= review.content %>" </blockquote><cite><%= review.user.first_name %> <%= review.user.last_name[0] %>.</cite>
+
       <% if review.user == current_user %>
         <%= link_to 'Edit Review', edit_gym_review_path(@user, review) %>
         <%= button_to "Delete This Review", gym_review_path(@gym, review), method: :delete %>
       <% end %>
       <% if user_signed_in? %>
         <%= button_to "Vote Up" %>
+        <%= button_to "Vote Down" %>
       <% end %>
-    </li>
-  </ul>
+
+
 <% end %>
 
 
 
 
-<%= link_to 'Back to Home', gyms_path %>
+<%= link_to "Back to #{@gym.name}", gym_path(@gym), :class => "button primary"%>
