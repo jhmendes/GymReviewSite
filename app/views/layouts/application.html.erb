@@ -33,6 +33,8 @@
           <ul class="vertical large-horizontal menu">
 
             <% if user_signed_in? %>
+            <li class="notice"><%= notice %></li>
+            <li class="alert"><%= alert %></li>
             <li><%= link_to "Add a New Gym", new_gym_path, :class => "button" %></li>
             <li><%= link_to "Update Profile", edit_user_registration_path, :class => "button success" %></li>
             <li><%= link_to "Sign Out", destroy_user_session_path, method: :delete, :class => "button alert" %></li>
@@ -40,9 +42,7 @@
             <li><%= link_to "Sign Up", new_user_registration_path, :class => "button primary" %></li>
             <li><%= link_to "Sign In", new_user_session_path, :class => "button secondary" %></li>
             <% end %>
-            <li class="notice"><%= notice %></li>
-            <li class="alert"><%= alert %></li>
-            <%= image_tag("gym-icon.png") %>
+            <li><%= image_tag("gym-icon.png") %></li>
           </ul>
         </div>
 
@@ -50,6 +50,12 @@
 
       <%= yield %>
 
+
+      <footer>
+        <p>Built by: John Mendes</p>
+        <p>Contact information: <a href="mailto:johnhenrymendes@gmail.com">
+          johnhenrymendes@gmail.com</a>.</p>
+        </footer>
     </div>
   </body>
 </html>
