@@ -10,6 +10,7 @@ gem 'foundation-rails'
 gem 'devise'
 gem 'rails-ujs'
 gem 'simple_form'
+gem 'hamburgers'
 
 group :development do
   gem 'listen', '~> 3.0.5'

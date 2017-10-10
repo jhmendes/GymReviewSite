@@ -16,4 +16,42 @@
 //= require_tree .
 //= require foundation
 
-$(function(){ $(document).foundation(); });
+$(function(){ $(document).foundation();
+  $(".hamburger").click( function()  {
+    $(this).toggleClass("hamburger--vortex");
+    $(this).toggleClass("is-active");
+  });
+
+
+  $(function() {
+
+      // Toggle Nav on Click
+      $('.hamburger').click(function() {
+          // Calling a function in case you want to expand upon this.
+          toggleNav();
+      });
+
+
+  });
+
+
+  /*========================================
+  =            CUSTOM FUNCTIONS            =
+  ========================================*/
+  function toggleNav() {
+      if ($('#site-wrapper').hasClass('show-nav')) {
+          // Do things on Nav Close
+          $('#site-wrapper').removeClass('show-nav');
+      } else {
+          // Do things on Nav Open
+          $('#site-wrapper').addClass('show-nav');
+      }
+
+      //$('#site-wrapper').toggleClass('show-nav');
+  }
+});
+
+
+// $( document ).ready(function() {
+//  $('.top-bar').hide().fadeIn(4000);
+// });

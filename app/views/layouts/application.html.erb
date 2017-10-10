@@ -14,24 +14,30 @@
   </head>
 
   <body>
+    <div id="site-wrapper">
+       <div id="site-canvas">
+         <div id="site-menu">
+           <a href="#" class="toggle-nav" style="color: pink; font-size: 20px;"><i class="fa fa-times"></i></a>
+           <h2>Menu</h1>
+             <%= render 'menu' %>
+           </div>
+
+
+
+         </div>
+      </div>
+
 
     <div class="page">
 
-      <div class="top-bar">
 
-        <div class="top-bar-left">
+      <div class="top-bar">
           <ul class="vertical large-horizontal menu">
             <li><%= link_to "Home", gyms_path, :class => "button primary"%></li>
             <%= form_tag(gyms_path, :method => "get", id: "search-form") do %>
             <%= text_field_tag :search, params[:search], placeholder: "Search Gyms" %>
             <%= submit_tag "Search", :name => nil %>
             <% end %>
-          </ul>
-        </div>
-
-        <div class="top-bar-right">
-          <ul class="vertical large-horizontal menu">
-
             <% if user_signed_in? %>
             <li class="notice"><%= notice %></li>
             <li class="alert"><%= alert %></li>
@@ -44,18 +50,29 @@
             <% end %>
             <li><%= image_tag("gym-icon.png") %></li>
           </ul>
-        </div>
 
       </div>
+
+
+      <button class="hamburger" type="button">
+        <span class="hamburger-box">
+          <span class="hamburger-inner"></span>
+        </span>
+      </button>
+
 
       <%= yield %>
 
 
       <footer>
         <p>Built by: John Mendes</p>
-        <p>Contact information: <a href="mailto:johnhenrymendes@gmail.com">
-          johnhenrymendes@gmail.com</a>.</p>
-        </footer>
+        <p>Contact information:
+          <a href="mailto:johnhenrymendes@gmail.com">
+            johnhenrymendes@gmail.com</a>.</p>
+
+      </footer>
+
     </div>
+
   </body>
 </html>
