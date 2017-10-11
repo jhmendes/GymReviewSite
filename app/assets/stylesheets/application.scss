@@ -20,7 +20,12 @@
 
 
 body {
-  background-color: darkgrey;
+
+  background: red; /* For browsers that do not support gradients */
+ background: -webkit-linear-gradient(lightgrey, #626D75); /* For Safari 5.1 to 6.0 */
+ background: -o-linear-gradient(lightgrey, #626D75); /* For Opera 11.1 to 12.0 */
+ background: -moz-linear-gradient(lightgrey, #626D75); /* For Firefox 3.6 to 15 */
+ background: linear-gradient(lightgrey, #626D75); /* Standard syntax */
 
 }
 
@@ -57,16 +62,20 @@ label {
   font-size: 20px;
 }
 
+.top-bar ul {
+  background-color: transparent;
+  text-align: center;
+}
 
 .img-responsive img {
     display: block;
     width: 100%;
     height: auto;
     margin: 0 auto;
-    padding: 50px;
+
     border: 2px solid;
    border-radius: 25px;
-   margin-top: 40px;
+   margin-top: 30px;
 }
 
 .menu img {
@@ -117,15 +126,21 @@ width: 100%;
 margin: 0 auto;
 padding: 50px;
 text-align: center;
+border: 2px solid white;
 }
 
 .list {
   border: 1px solid #000;
   width: 80%;
   margin: 0 auto;
+  margin-top: 30px;
   padding: 5px;
   font-family: Verdana, sans-serif;
   padding: 20px;
+
+  li {
+    font-size: 1em;
+  }
 }
 
 .gym-details {
@@ -235,6 +250,7 @@ footer {
     z-index: 9999;
   }
 
+
   .hamburger {
     padding: 20px;
     width: 100%;
@@ -254,6 +270,18 @@ footer {
     display: block;
     margin: 0 auto;
   }
+
+
+  @media (min-width: 903px) {
+    .title h1 {
+      font-size: 400px;
+    }
+
+
+
+  }
+
+
   //
   // #site-wrapper {
   //   position: absolute;
@@ -309,7 +337,7 @@ footer {
   }
 }
 
-@media (min-width: 751px) {
+@media (min-width: 601px) {
   .hamburger {
     display: none;
   }
