@@ -1,9 +1,7 @@
-
+  <h2>Sign into Gym Review Site</h2>
 
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-
-  <h2>Sign into Gym Review Site</h2>
-  <h4>Please enter your username and password below</h4>
+  <p>Please enter your username and password below</p>
   <div class="field">
     <%= f.label :email %><br />
     <%= f.email_field :email, autofocus: true %>
