@@ -1,27 +1,27 @@
-  <h2>Sign into Gym Review Site</h2>
+<h2>Sign into Gym Review Site</h2>
 
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <p>Please enter your username and password below</p>
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true %>
-  </div>
+<p>Please enter your username and password below</p>
+<div class="field">
+  <%= f.label :email %><br/>
+  <%= f.email_field :email, autofocus: true %>
+</div>
 
-  <div class="field">
-    <%= f.label :password %><br />
-    <%= f.password_field :password, autocomplete: "off" %>
-  </div>
+<div class="field">
+  <%= f.label :password %><br/>
+  <%= f.password_field :password, autocomplete: "off" %>
+</div>
 
-  <% if devise_mapping.rememberable? -%>
-    <div class="field">
-      <%= f.check_box :remember_me %>
-      <%= f.label :remember_me %>
-    </div>
-  <% end -%>
+<% if devise_mapping.rememberable? -%>
+<div class="field">
+  <%= f.check_box :remember_me %>
+  <%= f.label :remember_me %>
+</div>
+<% end -%>
 
-  <div class="actions">
-    <%= f.submit "Sign In", :class => "button" %>
-  </div>
+<div class="actions">
+  <%= f.submit "Sign In", :class => "button" %>
+</div>
 
-  <%= render "devise/shared/links" %>
+<%= render "devise/shared/links" %>
 <% end %>

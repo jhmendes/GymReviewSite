@@ -10,15 +10,16 @@
   <h3>Description:</h3>
   <p><%= @gym.description %> </p>
 
-  <h3>Price Range</h3>
+  <h3>Price Range:</h3>
   <p><%= @gym.price_range %></p>
 
-  <%= link_to 'Reviews For This Gym', gym_reviews_path(@gym), :class => "button primary" %>
+
 
 </div>
 
-
-
+</div>
+<div class="gym-links">
+<%= link_to 'Reviews For This Gym', gym_reviews_path(@gym), :class => "button primary" %>
 <% if user_signed_in? %>
 
     <%= link_to 'Review this gym', new_gym_review_path(@gym), :class => "button success" %>
@@ -27,4 +28,3 @@
 <% end %>
 
 </div>
-<!-- add in name to reviews each loop afterwards -->
