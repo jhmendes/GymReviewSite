@@ -39,6 +39,8 @@ h1, h2, h3, h4, h5, h6 {
 
 h2 {
   margin-bottom: 30px;
+  text-align: center;
+  padding: 20px;
 }
 
 a {
@@ -55,6 +57,7 @@ p {
 
 input {
   margin-bottom: 40px;
+
 }
 
 label {
@@ -162,16 +165,11 @@ border: 2px solid white;
 }
 #sign-up {
   text-align: center;
-
-  @media screen and (min-width: 39.9375em) {
-    h2 {
-      font-size: 50px;
-    }
-
-    h4 {
-      font-size: 20px;
-    }
+  margin-bottom: 30px;
+  p {
+    color: #000;
   }
+
 
 }
 
@@ -196,6 +194,11 @@ border: 2px solid white;
   background-color: $form-background-color;
   border-radius: 20px;
   padding: 50px;
+
+   p {
+     color: #000;
+     text-align: center;
+   }
 
   @media screen and (min-width: 1100px) {
     width: 60%;
@@ -230,6 +233,10 @@ footer {
 
 /************* SIGN UP *************/
 
+.actions input {
+ width: 100%;
+ font-size: 20px;
+}
 
 /************* END SECTION *************/
 
@@ -247,7 +254,10 @@ footer {
   }
 
   .page {
-    z-index: 9999;
+    h2 {
+      text-align: center;
+      font-weight: 400;
+    }
   }
 
 
