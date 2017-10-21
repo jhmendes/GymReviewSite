@@ -6,6 +6,9 @@
 </div>
 
 <!-- List of gyms in a div? Style into squares with image? -->
+<div class="img-responsive">
+  <%= image_tag("gym-main.png") %>
+</div>
 
 <div class="list">
   <h2>Gym List</h2>
@@ -14,8 +17,4 @@
     <li><%= link_to "#{gym.name}", gym_path(gym) %></li>
     <% end %>
   </ul>
-</div>
-
-<div class="img-responsive">
-  <%= image_tag("gym-main.png") %>
 </div>

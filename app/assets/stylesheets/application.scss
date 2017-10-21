@@ -18,13 +18,26 @@
 @import '_settings.scss';
 @import 'hamburgers';
 
+
+/************* Site Colors *************/
+// Electric
+$c1: #3CC47C;
+// Forest
+$c2: #1E392A;
+// Light
+$c3: #E9C893;
+// Tin
+$c4: #828081;
+/************* END SECTION *************/
+
 body {
   background: #108dc7;
   /* fallback for old browsers */
-  background: -webkit-linear-gradient(to left, #ef8e38, #108dc7);
+  background: -webkit-linear-gradient(to left, $c2, $c1);
   /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to left, #ef8e38, #108dc7);
+  background: linear-gradient(to left, $c2, $c1);
   /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
 }
 
 form {
@@ -67,6 +80,10 @@ input {
 label {
   color: #000;
   font-size: 20px;
+}
+
+.top-bar {
+  background-color: $c4;
 }
 
 .top-bar ul {
@@ -129,18 +146,33 @@ label {
   padding: 50px;
   text-align: center;
   border: 2px solid white;
+  border-radius: 0 0 30px 30px;
+  background-color: $c3;
 }
 
 .list {
-  border: 1px solid #000;
-  width: 80%;
+  border: 2px solid #fff;
+  width: 100%;
   margin: 30px auto 0;
   padding: 5px;
   font-family: Verdana, sans-serif;
   padding: 20px;
+  background-color: $c3;
+  border-radius: 20px 20px 0 0;
+
 
   li {
-    font-size: 1em;
+    font-size: 1.5em;
+    list-style: none;
+    text-align: center;
+  }
+
+  a {
+    color: #000;
+
+    &:hover {
+      color: $c1;
+    }
   }
 }
 
@@ -254,6 +286,10 @@ footer {
     display: none;
   }
 
+  .title {
+    margin: 20px auto;
+    border-radius: 30px;
+  }
   .page {
     h2 {
       text-align: center;
